@@ -1,0 +1,44 @@
+body {
+	background-color: #454242;
+}
+body footer input, button {
+	float: left;
+	width: auto;
+	height:auto;
+	display: inline-block;
+	color: black;
+}
+body textarea {
+	font-family: sans-serif;
+	font-size: 25px;
+}
+#status h6, input, button {
+	display: block;
+}
+#status {
+	color: darkred;
+	float: left;
+	margin-left: auto;
+	border-style: double;
+	border-radius: 5px;
+	border-width: 9px;
+	border-color: #000000;
+	background-color: #ffffff;
+}
+#status h6 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#status input {
+	color: black;
+}
+#status button, input {
+	padding-left: 10px;
+	padding-right: 10px;
+	border-color: #000000;
+	border-style: double;
+	color: darkred;
+}
+#status input {
+	background-color: #ffffff;
+}

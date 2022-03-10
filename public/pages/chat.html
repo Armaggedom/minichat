@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"><!--  http-equiv="refresh" content="1"> -->
+	<link rel="stylesheet" type="text/css" href="../css/chat.css">
+	<script src="/socket.io/socket.io.js"></script>
+	<title>-MiniChat-</title>
+</head>
+<body>
+	<div id='status'>
+		<h2 id='connectionResponse'>Status: [OFFLINE]</h2>
+	</div>
+	<textarea readonly id='messageBox' rows="4" cols="10" ></textarea>
+	<footer>
+		<input type="text" size="100" id="send">
+		<button type="button" onclick="sendMessage()">send</button>
+	</footer>
+	<script>
+		const socket=io()
+		socket.on('connect', ()=>{
+			document.getElementById('connectionResponse').style.color="green"
+			document.getElementById('connectionResponse').innerHTML="Status: [ONLINE]"
+			return socket.emit('newconnection', 'client connected')
+		})
+		function sendMessage() {
+			return socket.emit('message', document.getElementById('send').value)
+		}
+		socket.on('reciveMessage', (args)=>{
+			return document.getElementById('messageBox').value+='\n'+args
+		})
+	</script>
+</body>
+</html>
