@@ -19,8 +19,8 @@ io.on("connection", socket => {
 		return io.in("room1").emit('reciveMessage', args)
 	})
 })
-httpServer.listen(4000, ()=>{
+httpServer.listen(process.env.PORT || 4000, ()=>{
 	console.clear()
-	console.log(`info: server V:3.0.0 Client: 3.0.0`)
+	console.log(`info: server V:3.0.1 Client: 3.0.0`)
   console.log(`---------------------[Cardial Online]---------------------`)
 })
