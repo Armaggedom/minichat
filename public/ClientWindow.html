@@ -2,23 +2,66 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"><!-- , http-equiv="refresh" content="1"> -->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<!-- <meta http-equiv="refresh" content="1"> -->
 		<link rel="stylesheet" type="text/css" href="./css/ClientWindow.css">
-		<script>
-			function connect() {
-				return window.location.href='pages/chat.html';					
-			}
-		</script>
+		<script src="./js/data.js"></script>
 	<title>-MiniChat-</title>
 	</head>
 	<body>
-		<div id='status'>
-			<h1>Status: [OFFLINE]</h1>
+		<nav class="frame">
+			<ul>
+				<li class="alignText">
+					<h1> MiniChat </h1>
+				</li>
+				<li class="alignText">
+					<h1 style="color: darkred;" id="status">Status: Await</h1>
+				</li>
+			</ul>
+			<script>connectionTest()</script>
+		</nav>
+		<div>
+			<div class="frame" id="connectDiv">
+				<h1 class="alignText">tester</h1>
+			</div>
+			<div class="frame" id="logDiv">
+				<ul>
+					<li class="alignText">
+						<h1>Log</h1>
+					</li>
+					<li class="alignText">
+						<ul>
+							<li class="alignText">
+								<h2 style="color: darkgreen;">
+									<ul id="LogList">
+										<li>
+											Main Visual Update
+										</li>
+										<li>
+											New Log area
+										</li>
+										<li>
+											connect status
+										</li>
+									</ul>
+								</h2>
+								<h2 style="color: darkred;">
+									<ul id="LogList">
+										<li>
+											System OFFLINE
+										</li>
+										<li>
+											Connect button
+										</li>
+									</ul>
+								</h2>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<main>
-			<form action="/pages/chat.html" method="GET">
-				<button type='button' onclick="connect()">[chat in]</button>
-			</form>
-		</main>
 	</body>
 </html>
