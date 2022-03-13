@@ -1,21 +1,24 @@
-<!-- V:3.0.1.1 -->
+<!-- V:3.0.2 -->
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"><!--  http-equiv="refresh" content="1"> -->
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta http-equiv="refresh" content="1"> -->
 	<link rel="stylesheet" type="text/css" href="../css/chat.css">
 	<script src="/socket.io/socket.io.js"></script>
 	<title>-MiniChat-</title>
 </head>
 <body>
-	<div id='status'>
+	<div class="frame" id="status">
 		<h2 id='connectionResponse'>Status: [OFFLINE]</h2>
 	</div>
-	<textarea readonly id='messageBox' rows="4" cols="10" ></textarea>
-	<footer>
-		<input type="text" size="100" id="send">
-		<button type="button" onclick="sendMessage()">send</button>
-	</footer>
+	<div class="frame" id="textZone">
+		<textarea readonly id='messageBox' rows="4" cols="10" ></textarea>
+	</div>
+	<div class="frame" id='inputZone'>
+		<input type="text" id="inputBox" placeholder="message">
+		<button id="sendButton" onclick="sendMessage()"> send </button>
+	</div>
 	<script>
 		const socket=io()
 		socket.on('connect', ()=>{
@@ -24,10 +27,12 @@
 			return socket.emit('newconnection', 'client connected')
 		})
 		function sendMessage() {
-			return socket.emit('message', document.getElementById('send').value)
+			return socket.emit('message', document.getElementById('inputBox').value)
 		}
 		socket.on('reciveMessage', (args)=>{
-			return document.getElementById('messageBox').value+='\n'+args
+			var ta = document.getElementById('messageBox');
+			ta.value+='\n'+args
+			return ta.scrollTop = ta.scrollHeight;
 		})
 	</script>
 </body>

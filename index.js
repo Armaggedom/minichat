@@ -21,6 +21,6 @@ io.on("connection", socket => {
 })
 httpServer.listen(process.env.PORT || 5000, ()=>{
 	console.clear()
-	console.log(`info: server V:3.0.1 Client: 3.0.1.1`)
+	console.log(`info: server V:3.0.1 Client: 3.0.2`)
   console.log(`---------------------[Cardial Online]---------------------`)
 })

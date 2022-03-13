@@ -11,20 +11,20 @@
 	<title>-MiniChat-</title>
 	</head>
 	<body>
-		<nav class="frame">
+		<nav class="frame" id="Title">
 			<ul>
 				<li class="alignText">
 					<h1> MiniChat </h1>
 				</li>
 				<li class="alignText">
-					<h1 style="color: darkred;" id="status">Status: Await</h1>
+					<h1 style="color: darkred;" id="status">Status: [await]</h1>
+					<script>connectionT()</script>
 				</li>
 			</ul>
-			<script>connectionTest()</script>
 		</nav>
 		<div>
 			<div class="frame" id="connectDiv">
-				<h1 class="alignText">tester</h1>
+				<button class="alignButton" onclick="redirect()">-[Connect]-</button>
 			</div>
 			<div class="frame" id="logDiv">
 				<ul>
@@ -33,11 +33,17 @@
 					</li>
 					<li class="alignText">
 						<ul>
-							<li class="alignText">
+							<li>
 								<h2 style="color: darkgreen;">
 									<ul id="LogList">
 										<li>
 											Main Visual Update
+										</li>
+										<li>
+											new Chat Ui
+										</li>
+										<li>
+											auto scroll
 										</li>
 										<li>
 											New Log area
@@ -45,15 +51,15 @@
 										<li>
 											connect status
 										</li>
+										<li>
+											new connect button
+										</li>
 									</ul>
 								</h2>
 								<h2 style="color: darkred;">
 									<ul id="LogList">
 										<li>
-											System OFFLINE
-										</li>
-										<li>
-											Connect button
+											mobile suport vertical instability
 										</li>
 									</ul>
 								</h2>
