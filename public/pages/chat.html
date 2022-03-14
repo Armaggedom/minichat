@@ -11,6 +11,7 @@
 <body>
 	<div class="frame" id="status">
 		<h2 id='connectionResponse'>Status: [OFFLINE]</h2>
+		<h6 id='connection'> connected: </h6>
 	</div>
 	<div class="frame" id="textZone">
 		<textarea readonly id='messageBox' rows="4" cols="10" ></textarea>
@@ -24,12 +25,18 @@
 		socket.on('connect', ()=>{
 			document.getElementById('connectionResponse').style.color="green"
 			document.getElementById('connectionResponse').innerHTML="Status: [ONLINE]"
-			return socket.emit('newconnection', 'client connected')
+			socket
+			socket.emit('newconnection', 'client connected')
 		})
 		function sendMessage() {
-			return socket.emit('message', document.getElementById('inputBox').value)
+			socket.emit('message', document.getElementById('inputBox').value)
+			return document.getElementById('inputBox').value=null
 		}
 		socket.on('reciveMessage', (args)=>{
+			const connections=args.split(' ')
+			if(connections[1]==='usuarios') {
+				return document.getElementById('connection').innerHTML=args
+			}
 			var ta = document.getElementById('messageBox');
 			ta.value+='\n'+args
 			return ta.scrollTop = ta.scrollHeight;

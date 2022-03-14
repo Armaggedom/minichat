@@ -12,6 +12,14 @@ io.engine.generateId=(req) => {
 }
 io.on("connection", socket => {
 	socket.join('room1')
+	io.in("room1").emit('reciveMessage', socket.client.conn.server.clientsCount + " usuarios conectados na [room 1]");
+	socket.on("disconnecting", (reason) => {
+	    for (const room of socket.rooms) {
+	    	if (room !== socket.id) {
+	        	io.in("room1").emit('reciveMessage', socket.client.conn.server.clientsCount + " usuarios conectados na room1");
+	      	}
+	    }
+ 	});
 	socket.on("newconnection", (args)=>{
 		console.log(args+' '+socket.id)
 	})
@@ -21,6 +29,6 @@ io.on("connection", socket => {
 })
 httpServer.listen(process.env.PORT || 5000, ()=>{
 	console.clear()
-	console.log(`info: server V:3.0.1 Client: 3.0.2`)
+	console.log(`info: server V:3.1.0 Client: 3.0.2.1`)
   console.log(`---------------------[Cardial Online]---------------------`)
 })
