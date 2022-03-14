@@ -10,7 +10,7 @@ mini chat is a chat message
 |3.0.2.1| client |
 ## How to use
 
-- Acess the site [minichat](https://minichannel.herokuapp.com/CientWindow.html)
+- Acess the site [minichat](https://minichannel.herokuapp.com/ClientWindow.html)
 - Click in [connect]
 - Send a message and await your friend to respond
 
