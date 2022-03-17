@@ -6,8 +6,8 @@ mini chat is a chat message
 	- messages before connection will not be seen
 |version| module |
 |-------|--------|
-|3.1.0| server |
-|3.0.2.1| client |
+|3.2.0| server |
+|3.0.2-build+2| client |
 ## How to use
 
 - Acess the site [minichat](https://minichannel.herokuapp.com/ClientWindow.html)
