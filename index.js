@@ -36,6 +36,6 @@ io.on("connection", socket => {
 httpServer.listen(process.env.PORT || 5000, ()=>{
 	console.clear()
 	console.log('----------------------[Cardial Info]----------------------')
-	console.log('info: server V:3.2.0 Client: 3.0.2-build+2')
+	console.log('info: server V:3.2.1 Client: 3.0.2-build+2')
  	console.log('---------------------[Cardial Online]---------------------')
 })
