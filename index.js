@@ -27,6 +27,7 @@ io.on("connection", socket => {
  	socket.on("userInput", (args)=>{
  		socket.data.username=args;
  		io.in("room1").emit('reciveMessage', '['+socket.data.username+'] entrou no chat');
+ 		console.log(io.engine.id)
  	})
  	//message input/output
 	socket.on("message", (args)=>{

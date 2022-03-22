@@ -1,4 +1,14 @@
 <!-- V:3.0.2-build+2 -->
+<!-- 
+= Package V:3.0.2-build+2 					completed
++ UI design										❌		
++ Client list 									❌
++ Command client								❌
++ create .mjs to commands client				❌
++ create rooms list 							❌
+= package name: Client atualization				❌
+= package version: V:4.0.0 						❌
+ -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,11 +21,19 @@
 	<body>
 		<!-- status window -->
 		<div class="frame" id="status">
-			<h2 id='connectionResponse'>Status: [OFFLINE]</h2>
-			<h6 id='connection'> connected: </h6>
-			<!-- username input -->
-			<input type="text" placeholder="User" id="username">
-			<button id="nameButton" onclick="username()">send</button>
+			<ul>
+				<li id="inline">
+					<h2 id='connectionResponse'>Status: [OFFLINE]</h2>
+					<h6 id='connection'> connected: </h6>
+					<!-- username input -->
+					<input type="text" placeholder="User" id="username">
+					<button id="nameButton" onclick="username()">send</button>
+				</li>
+				<li id="inline">
+					<h2>connectados</h2>	
+					<textarea readonly id="onlineFrame" style="resize: none;" rows="5">[Comming soon...]</textarea>
+				</li>
+			</ul>
 		</div>
 		<!-- chat window -->
 		<div class="frame" id="textZone" hidden="true">

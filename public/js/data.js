@@ -16,3 +16,7 @@ function redirect() {
 	if(online===true) {return window.location.href="../pages/chat.html"}
 	else {return alert('Cardial: [offline]')}
 }
+
+function parasyte() {
+	return window.location.href="../pages/eletivaparasyte/main.html"
+}

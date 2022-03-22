@@ -1,0 +1,22 @@
+body {
+	background-color: darkgreen;
+	margin-top: 1vw;
+}
+body main {
+	border: double;
+	border-width: 1vw;
+	background-color: white;
+	max-width: 90%;
+	height: auto;
+	margin: auto;
+}
+body main h1 {
+	text-align: center;
+}
+body main iframe {
+	font-family: monospace;
+	border: none;
+	display: block;
+	width: 99%;
+	height: 35vw;
+}
